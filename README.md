@@ -15,7 +15,14 @@ curl http://localhost:3000
 ```
 
 ## method 2:
-npm install --strict-ssl=false --prefix seeker "https://xxx.seeker.synopsys.com/rest/api/latest/installers/agents/binaries/NODEJS?projectKey=juiceshop-shichao&flavor=TARGZ"
+git clone https://github.com/juice-shop/juice-shop
+cd juice-shop
+npm install --strict-ssl=false --prefix seeker "https://testing.seeker.synopsys.com/rest/api/latest/installers/agents/binaries/NODEJS?projectKey=juiceshop-shichao&flavor=TARGZ"
+npm install
 
+export SEEKER_SERVER_URL=https://testing.seeker.synopsys.com:443
+export SEEKER_PROJECT_KEY=juiceshop-shichao
+// insert the following as 2nd line of build/server.js
+node -r "./seeker/node_modules/@synopsys-sig/seeker" index.js 
 npm start
 curl http://localhost:3000
