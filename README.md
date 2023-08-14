@@ -15,6 +15,7 @@ curl http://localhost:3000
 ```
 
 ## method 2:
+```
 git clone https://github.com/juice-shop/juice-shop
 cd juice-shop
 npm install --strict-ssl=false --prefix seeker "https://testing.seeker.synopsys.com/rest/api/latest/installers/agents/binaries/NODEJS?projectKey=juiceshop-shichao&flavor=TARGZ"
@@ -26,3 +27,4 @@ export SEEKER_PROJECT_KEY=juiceshop-shichao
 node -r "./seeker/node_modules/@synopsys-sig/seeker" index.js 
 npm start
 curl http://localhost:3000
+```
