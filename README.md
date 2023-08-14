@@ -24,7 +24,9 @@ npm install
 export SEEKER_SERVER_URL=https://testing.seeker.synopsys.com:443
 export SEEKER_PROJECT_KEY=juiceshop-shichao
 // insert the following as 2nd line of build/server.js
-// require('./seeker/node_modules/@synopsys-sig/seeker');
+// require('./seeker/node_modules/@synopsys-sig/seeker'); OR
+{ echo -n 'require('../seeker/node_modules/@synopsys-sig/seeker'); \n'; cat build/server.js; } >nserver.js
+mv nserver.js build/server.js
 npm start
 curl http://localhost:3000
 ```
